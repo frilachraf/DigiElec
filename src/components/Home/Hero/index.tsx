@@ -17,6 +17,8 @@ const Hero = () => {
                 className="absolute right-0 bottom-0 -z-1"
                 width={534}
                 height={520}
+                style={{ width: "auto", height: "auto" }}
+                loading="eager"
               />
 
               <HeroCarousel />
