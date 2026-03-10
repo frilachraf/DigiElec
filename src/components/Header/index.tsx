@@ -8,6 +8,7 @@ import { useAppSelector } from "@/redux/store";
 import { useSelector } from "react-redux";
 import { selectTotalPrice } from "@/redux/features/cart-slice";
 import { useCartModalContext } from "@/app/context/CartSidebarModalContext";
+import { useAuth } from "@/contexts/AuthContext";
 import Image from "next/image";
 
 const Header = () => {
@@ -15,6 +16,7 @@ const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
   const { openCartModal } = useCartModalContext();
+  const { user, isAdmin } = useAuth();
 
   const product = useAppSelector((state) => state.cartReducer.items);
   const totalPrice = useSelector(selectTotalPrice);
@@ -242,6 +244,16 @@ const Header = () => {
                   </div>
                 </button>
               </div>
+
+              {/* Admin Link */}
+              {isAdmin && (
+                <Link
+                  href="/admin"
+                  className="px-4 py-2 rounded-md bg-blue text-white font-medium text-sm hover:bg-blue/90 transition-colors"
+                >
+                  Admin
+                </Link>
+              )}
 
               {/* <!-- Hamburger Toggle BTN --> */}
               <button
