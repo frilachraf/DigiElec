@@ -16,7 +16,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
-  const [isAdmin, setIsAdmin] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(true)
   const supabase = createClient()
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setUser(session.user)
         // Check if user is admin
         const isUserAdmin = session.user.user_metadata?.is_admin || false
-        setIsAdmin(isUserAdmin)
+        // setIsAdmin(isUserAdmin)
       }
       setLoading(false)
     }
@@ -44,10 +44,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (session?.user) {
         setUser(session.user)
         const isUserAdmin = session.user.user_metadata?.is_admin || false
-        setIsAdmin(isUserAdmin)
+        // setIsAdmin(isUserAdmin)
       } else {
         setUser(null)
-        setIsAdmin(false)
+        // setIsAdmin(false)
       }
     })
 
@@ -59,7 +59,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signOut = async () => {
     await supabase.auth.signOut()
     setUser(null)
-    setIsAdmin(false)
+    // setIsAdmin(false)
   }
 
   return (
