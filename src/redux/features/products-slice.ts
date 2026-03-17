@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import { Product } from '@/types/product'
-import { productService } from '@/services/productService'
+import { productsApiService } from '@/services/productsApiService'
 
 type ProductsState = {
   items: Product[]
@@ -18,7 +18,7 @@ export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async (_, { rejectWithValue }) => {
     try {
-      const products = await productService.getProducts()
+      const products = await productsApiService.getProducts()
       return products
     } catch (error) {
       return rejectWithValue((error as Error).message)
@@ -30,7 +30,14 @@ export const createProduct = createAsyncThunk(
   'products/createProduct',
   async (product: Omit<Product, 'id'>, { rejectWithValue }) => {
     try {
-      const newProduct = await productService.createProduct(product)
+      const newProduct = await productsApiService.createProduct({
+        title: product.title,
+        price: product.price,
+        discounted_price: product.discountedPrice,
+        reviews: product.reviews,
+        preview_images: product.imgs.previews,
+        thumbnail_images: product.imgs.thumbnails,
+      })
       return newProduct
     } catch (error) {
       return rejectWithValue((error as Error).message)
@@ -40,9 +47,17 @@ export const createProduct = createAsyncThunk(
 
 export const updateProduct = createAsyncThunk(
   'products/updateProduct',
-  async ({ id, updates }: { id: number; updates: Partial<Product> }, { rejectWithValue }) => {
+  async ({ id, updates }: { id: string | number; updates: Partial<Product> }, { rejectWithValue }) => {
     try {
-      const updatedProduct = await productService.updateProduct(id, updates)
+      const updatePayload: any = {}
+      if (updates.title) updatePayload.title = updates.title
+      if (updates.price) updatePayload.price = updates.price
+      if (updates.discountedPrice) updatePayload.discounted_price = updates.discountedPrice
+      if (updates.reviews) updatePayload.reviews = updates.reviews
+      if (updates.imgs?.previews) updatePayload.preview_images = updates.imgs.previews
+      if (updates.imgs?.thumbnails) updatePayload.thumbnail_images = updates.imgs.thumbnails
+
+      const updatedProduct = await productsApiService.updateProduct(id, updatePayload)
       return updatedProduct
     } catch (error) {
       return rejectWithValue((error as Error).message)
@@ -52,9 +67,9 @@ export const updateProduct = createAsyncThunk(
 
 export const deleteProduct = createAsyncThunk(
   'products/deleteProduct',
-  async (id: number, { rejectWithValue }) => {
+  async (id: string | number, { rejectWithValue }) => {
     try {
-      await productService.deleteProduct(id)
+      await productsApiService.deleteProduct(id)
       return id
     } catch (error) {
       return rejectWithValue((error as Error).message)
@@ -107,7 +122,7 @@ const productsSlice = createSlice({
         state.error = action.payload as string
       })
       // Delete product
-      .addCase(deleteProduct.fulfilled, (state, action: PayloadAction<number>) => {
+      .addCase(deleteProduct.fulfilled, (state, action: PayloadAction<string | number>) => {
         state.items = state.items.filter((p) => p.id !== action.payload)
       })
       .addCase(deleteProduct.rejected, (state, action) => {
