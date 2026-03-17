@@ -16,7 +16,6 @@ import PreviewSliderModal from "@/components/Common/PreviewSlider";
 
 import ScrollToTop from "@/components/Common/ScrollToTop";
 import PreLoader from "@/components/Common/PreLoader";
-import { ApiProvider } from "@/contexts/ApiContext";
 
 export default function RootLayout({
   children,
@@ -42,11 +41,8 @@ export default function RootLayout({
                   <ModalProvider>
                     <PreviewSliderProvider>
                       <Header />
-                      <ApiProvider>
                         {children}
-                      {/* {children} */}
 
-                      </ApiProvider>
                       <QuickViewModal />
                       <CartSidebarModal />
                       <PreviewSliderModal />
