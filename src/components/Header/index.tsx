@@ -161,7 +161,7 @@ const Header = () => {
 
             <div className="flex w-full lg:w-auto justify-between items-center gap-5">
               <div className="flex items-center gap-5">
-                <Link href="/signin" className="flex items-center gap-2.5">
+                {/* <Link href="/signin" className="flex items-center gap-2.5">
                   <svg
                     width="24"
                     height="24"
@@ -191,7 +191,7 @@ const Header = () => {
                       Sign In
                     </p>
                   </div>
-                </Link>
+                </Link> */}
 
                 <button
                   onClick={handleOpenCartModal}
@@ -246,14 +246,14 @@ const Header = () => {
               </div>
 
               {/* Admin Link */}
-              {isAdmin && (
+              {/* {isAdmin && (
                 <Link
                   href="/admin"
                   className="px-4 py-2 rounded-md bg-blue text-white font-medium text-sm hover:bg-blue/90 transition-colors"
                 >
                   Admin
                 </Link>
-              )}
+              )} */}
 
               {/* <!-- Hamburger Toggle BTN --> */}
               <button
@@ -347,7 +347,7 @@ const Header = () => {
             {/* // <!--=== Nav Right Start ===--> */}
             <div className="hidden xl:block">
               <ul className="flex items-center gap-5.5">
-                <li className="py-4">
+                {/* <li className="py-4">
                   <a
                     href="#"
                     className="flex items-center gap-1.5 font-medium text-custom-sm text-dark hover:text-blue"
@@ -371,9 +371,9 @@ const Header = () => {
                     </svg>
                     Recently Viewed
                   </a>
-                </li>
+                </li> */}
 
-                <li className="py-4">
+                {/* <li className="py-4">
                   <Link
                     href="/wishlist"
                     className="flex items-center gap-1.5 font-medium text-custom-sm text-dark hover:text-blue"
@@ -393,7 +393,7 @@ const Header = () => {
                     </svg>
                     Wishlist
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             {/* <!--=== Nav Right End ===--> */}

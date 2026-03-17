@@ -8,16 +8,17 @@ import CounDown from "./Countdown";
 import Testimonials from "./Testimonials";
 import Newsletter from "../Common/Newsletter";
 
-const Home = () => {
+const Home =  () => {
   return (
     <main>
       <Hero />
+      
       <Categories />
       <NewArrival />
       <PromoBanner />
       <BestSeller />
       <CounDown />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Newsletter />
     </main>
   );
