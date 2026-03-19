@@ -1,0 +1,69 @@
+{
+  "header": {
+    "searchPlaceholder": "Rechercher des produits...",
+    "cart": "Panier",
+    "admin": "Admin",
+    "signin": "Se connecter",
+    "signup": "S'inscrire",
+    "language": "Langue",
+    "allCategories": "Toutes les catégories"
+  },
+  "footer": {
+    "about": "À propos de nous",
+    "contact": "Contact",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
+  },
+  "shop": {
+    "title": "Boutique",
+    "filters": "Filtres",
+    "sortBy": "Trier par",
+    "price": "Prix",
+    "category": "Catégorie",
+    "rating": "Évaluation",
+    "noResults": "Aucun produit trouvé",
+    "results": "résultats"
+  },
+  "product": {
+    "addToCart": "Ajouter au panier",
+    "viewDetails": "Voir les détails",
+    "price": "Prix",
+    "inStock": "En stock",
+    "outOfStock": "Rupture de stock",
+    "reviews": "Avis"
+  },
+  "home": {
+    "newArrivals": "Nouvelles arrivées",
+    "bestSellers": "Meilleures ventes",
+    "categories": "Catégories",
+    "featuredProducts": "Produits vedettes",
+    "seeAll": "Voir tout"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "forgotPassword": "Mot de passe oublié?",
+    "dontHaveAccount": "Vous n'avez pas de compte?",
+    "haveAccount": "Vous avez déjà un compte?",
+    "signOut": "Se déconnecter"
+  },
+  "admin": {
+    "dashboard": "Tableau de bord administrateur",
+    "products": "Produits",
+    "addProduct": "Ajouter un produit",
+    "editProduct": "Modifier le produit",
+    "deleteProduct": "Supprimer le produit",
+    "title": "Titre",
+    "description": "Description",
+    "price": "Prix",
+    "discountedPrice": "Prix réduit",
+    "image": "Image",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier"
+  }
+}
