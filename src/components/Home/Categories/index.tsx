@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css";
 import SingleItem from "./SingleItem";
 
-const Categories = ({data}: {data?:any}) => {
+const Categories = () => {
   const sliderRef = useRef(null);
 
   const handlePrev = useCallback(() => {
@@ -19,7 +19,7 @@ const Categories = ({data}: {data?:any}) => {
 
   const handleNext = useCallback(() => {
     if (!sliderRef.current) return;
-    sliderRef.current.swilper.slideNext();
+    sliderRef.current.swiper.slideNext();
   }, []);
 
   useEffect(() => {

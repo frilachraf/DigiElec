@@ -8,17 +8,11 @@ import CounDown from "./Countdown";
 import Testimonials from "./Testimonials";
 import Newsletter from "../Common/Newsletter";
 
-const Home = async () => {
-  const res = await fetch('http://localhost:8000/ui/home/all')
-  const categoriesRes = await fetch('http://localhost:8000/categories')
-   const data = await res.json()
-   const categories = await categoriesRes.json()
-   console.log(categories, res)
-
+const Home = () => {
   return (
     <main>
-      <Hero data={data.hero}/>
-      <Categories data={categories.data}/>
+      <Hero />
+      <Categories />
       <NewArrival />
       <PromoBanner />
       <BestSeller />

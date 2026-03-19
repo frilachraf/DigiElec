@@ -7,14 +7,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css";
-const Hero = ({
-  data
-}: {
-  data: {
-    carouselItems: any,
-    products: any
-  }
-}) => {
+const Hero = () => {
+  // Use default carousel data for hero section
+  const defaultCarouselItems = [
+    {
+      discount_number: 20,
+      product_name: "Modern Headphones",
+      description: "Experience crystal clear sound"
+    },
+    {
+      discount_number: 30,
+      product_name: "Premium Headset",
+      description: "Professional grade audio quality"
+    }
+  ];
+
   return (
     <section className="overflow-hidden pb-10 lg:pb-12.5 xl:pb-15 pt-57.5 sm:pt-45 lg:pt-30 xl:pt-51.5 bg-[#E5EAF4]">
       <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
@@ -46,7 +53,7 @@ const Hero = ({
                 modules={[Autoplay, Pagination]}
                 className="hero-carousel h-full"
               >
-                {data.carouselItems.map((item: any, i) => {
+                {defaultCarouselItems.map((item: any, i) => {
                   return (
                     <SwiperSlide key={i}>
                       <div className="flex items-center justify-around pt-6 sm:pt-0 flex-col-reverse sm:flex-row">

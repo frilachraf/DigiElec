@@ -40,11 +40,13 @@ export default function AddProductForm({ onSuccess }: AddProductFormProps) {
         return
       }
 
+      const price = parseFloat(formData.price)
       const productData = {
         title: formData.title,
-        price: parseFloat(formData.price),
-        discountedPrice: formData.discountedPrice ? parseFloat(formData.discountedPrice) : parseFloat(formData.price),
+        price: price,
+        discountedPrice: formData.discountedPrice ? parseFloat(formData.discountedPrice) : price,
         reviews: formData.reviews ? parseInt(formData.reviews) : 0,
+        price_html: `$${price.toFixed(2)}`,
         imgs: {
           previews: [],
           thumbnails: [],
