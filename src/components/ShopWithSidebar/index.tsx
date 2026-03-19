@@ -12,8 +12,11 @@ import ColorsDropdwon from "./ColorsDropdwon";
 import PriceDropdown from "./PriceDropdown";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
+import { Product } from "@/types/product";
 
-const ShopWithSidebar = () => {
+const ShopWithSidebar =  ({data}: {
+  data?: Product[]
+}) => {
   const dispatch = useDispatch<AppDispatch>();
   const { items: shopData, loading } = useSelector((state: RootState) => state.products);
   
@@ -105,6 +108,7 @@ const ShopWithSidebar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   });
+
 
   return (
     <>
@@ -287,7 +291,8 @@ const ShopWithSidebar = () => {
                     : "flex flex-col gap-7.5"
                 }`}
               >
-                {shopData.map((item, key) =>
+                {}
+                {data && data.map((item, key) =>
                   productStyle === "grid" ? (
                     <SingleGridItem item={item} key={key} />
                   ) : (

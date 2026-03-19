@@ -15,10 +15,16 @@ export const menuData: Menu[] = [
   },
   {
     id: 3,
-    title: "Contact",
+    title: "Blogs",
     newTab: false,
-    path: "/contact",
+    path: "/blogs",
   },
+  // {
+  //   id: 3,
+  //   title: "Contact",
+  //   newTab: false,
+  //   path: "/contact",
+  // },
   // {
   //   id: 6,
   //   title: "pages",

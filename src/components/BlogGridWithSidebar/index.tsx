@@ -8,7 +8,7 @@ import LatestProducts from "../Blog/LatestProducts";
 import Categories from "../Blog/Categories";
 import shopData from "../Shop/shopData"; 
  
-const BlogGridWithSidebar = () => {
+const BlogGridWithSidebar =async () => {
   const categories = [
     {
       name: "Desktop",
@@ -36,6 +36,11 @@ const BlogGridWithSidebar = () => {
     },
   ];
 
+
+  const res = await fetch('http://localhost:8000/blogs')
+  const data = await res.json()
+  const blogs = data.data
+  console.log(data)
   return (
     <>
       <Breadcrumb title={"Blog Grid Sidebar"} pages={["blog grid sidebar"]} />
@@ -46,7 +51,7 @@ const BlogGridWithSidebar = () => {
             {/* <!-- blog grid --> */}
             <div className="lg:max-w-[770px] w-full">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-7.5">
-                {blogData.map((blog, key) => (
+                {blogs.map((blog, key) => (
                   <BlogItem blog={blog} key={key} />
                 ))}
               </div>
@@ -176,16 +181,16 @@ const BlogGridWithSidebar = () => {
               <SearchForm />
 
               {/* <!-- Recent Posts box --> */}
-              <LatestPosts blogs={blogData} />
+              {/* <LatestPosts blogs={blogData} /> */}
 
               {/* <!-- Latest Products box --> */}
               <LatestProducts products={shopData} />
 
               {/* <!-- Popular Category box --> */}
-              <Categories categories={categories} />
+              {/* <Categories categories={categories} /> */}
 
               {/* <!-- Tags box --> */}
-              <div className="shadow-1 bg-white rounded-xl mt-7.5">
+              {/* <div className="shadow-1 bg-white rounded-xl mt-7.5">
                 <div className="px-4 sm:px-6 py-4.5 border-b border-gray-3">
                   <h2 className="font-medium text-lg text-dark">Tags</h2>
                 </div>
@@ -249,7 +254,7 @@ const BlogGridWithSidebar = () => {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

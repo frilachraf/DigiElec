@@ -1,7 +1,7 @@
 import { createClient } from '@/lib/supabase/client'
 import { Product } from '@/types/product'
 
-export const productService = {
+export const WpProductService = {
   async getProducts(): Promise<Product[]> {
     const supabase = createClient()
     
@@ -146,3 +146,4 @@ export const productService = {
     return true
   },
 }
+

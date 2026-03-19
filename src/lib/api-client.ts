@@ -5,7 +5,9 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
 
 interface ApiResponse<T> {
-  data?: T
+  data?: {
+    message: string;
+  }
   error?: string
   success: boolean
 }
