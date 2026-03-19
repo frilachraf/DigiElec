@@ -8,4 +8,5 @@ export type Product = {
     thumbnails: string[];
     previews: string[];
   };
+  price_html: string
 };

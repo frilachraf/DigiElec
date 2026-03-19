@@ -15,7 +15,7 @@ const Footer = () => {
             </h2>
 
             <ul className="flex flex-col gap-3">
-              <li className="flex gap-4.5">
+              {/* <li className="flex gap-4.5">
                 <span className="flex-shrink-0">
                   <svg
                     width="24"
@@ -33,7 +33,7 @@ const Footer = () => {
                   </svg>
                 </span>
                 685 Market Street,Las Vegas, LA 95820,United States.
-              </li>
+              </li> */}
 
               <li>
                 <a href="#" className="flex items-center gap-4.5">
@@ -196,7 +196,7 @@ const Footer = () => {
             {/* <!-- Social Links end --> */}
           </div>
 
-          <div className="w-full sm:w-auto">
+          {/* <div className="w-full sm:w-auto">
             <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
               Account
             </h2>
@@ -228,7 +228,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div className="w-full sm:w-auto">
             <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
@@ -264,7 +264,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="w-full sm:w-auto">
+          {/* <div className="w-full sm:w-auto">
             <h2 className="mb-7.5 text-custom-1 font-medium text-dark lg:text-right">
               Download App
             </h2>
@@ -328,7 +328,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
         {/* <!-- footer menu end --> */}
       </div>
@@ -338,11 +338,11 @@ const Footer = () => {
         <div className="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
           <div className="flex gap-5 flex-wrap items-center justify-between">
             <p className="text-dark font-medium">
-              &copy; {year}. All rights reserved by PimjoLabs.
+              &copy; {year}. All rights reserved.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <p className="font-medium">We Accept:</p>
+              {/* <p className="font-medium">We Accept:</p>
 
               <div className="flex flex-wrap items-center gap-6">
                 <a href="#" aria-label="payment system with visa card">
@@ -385,7 +385,7 @@ const Footer = () => {
                     height={22}
                   />
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

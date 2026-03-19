@@ -8,10 +8,12 @@ export const metadata: Metadata = {
   // other metadata
 };
 
-const BlogGridWithSidebarPage = () => {
+const BlogGridWithSidebarPage = async () => {
+  
+
   return (
     <>
-      <BlogGridWithSidebar />
+      <BlogGridWithSidebar  />
     </>
   );
 };

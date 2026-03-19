@@ -1,0 +1,69 @@
+{
+  "header": {
+    "searchPlaceholder": "Search products...",
+    "cart": "Cart",
+    "admin": "Admin",
+    "signin": "Sign In",
+    "signup": "Sign Up",
+    "language": "Language",
+    "allCategories": "All Categories"
+  },
+  "footer": {
+    "about": "About Us",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions"
+  },
+  "shop": {
+    "title": "Shop",
+    "filters": "Filters",
+    "sortBy": "Sort By",
+    "price": "Price",
+    "category": "Category",
+    "rating": "Rating",
+    "noResults": "No products found",
+    "results": "results"
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "viewDetails": "View Details",
+    "price": "Price",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "reviews": "Reviews"
+  },
+  "home": {
+    "newArrivals": "New Arrivals",
+    "bestSellers": "Best Sellers",
+    "categories": "Categories",
+    "featuredProducts": "Featured Products",
+    "seeAll": "See All"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "login": "Login",
+    "register": "Register",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "signOut": "Sign Out"
+  },
+  "admin": {
+    "dashboard": "Admin Dashboard",
+    "products": "Products",
+    "addProduct": "Add Product",
+    "editProduct": "Edit Product",
+    "deleteProduct": "Delete Product",
+    "title": "Title",
+    "description": "Description",
+    "price": "Price",
+    "discountedPrice": "Discounted Price",
+    "image": "Image",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit"
+  }
+}

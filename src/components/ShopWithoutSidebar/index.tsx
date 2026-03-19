@@ -1,15 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "@/redux/features/products-slice";
+import { AppDispatch, RootState } from "@/redux/store";
 import Breadcrumb from "../Common/Breadcrumb";
 
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
 import CustomSelect from "../ShopWithSidebar/CustomSelect";
 
-import shopData from "../Shop/shopData";
-
 const ShopWithoutSidebar = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { items: shopData, loading } = useSelector((state: RootState) => state.products);
+  
   const [productStyle, setProductStyle] = useState("grid");
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   const options = [
     { label: "Latest Products", value: "0" },
